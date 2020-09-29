@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'calc-lib-test-app';
+
+  public firstNumber: number;
+  public secondNumber: number;
+  public result: number;
+
+  public additionFuncalled(event): void{
+   this.result = event;
+  }
+
+  public subsFuncalled(event): void{
+    this.result = event;
+  }
 }
