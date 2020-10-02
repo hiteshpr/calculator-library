@@ -8,7 +8,10 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build-lib": "ng build calculator-lib"
+    "build-lib": "ng build calculator-lib",
+    "install-lib": "npm install calculator-lib",
+    "cal-lib-all": "npm run build-lib && npm run install-lib",
+    "prod-build": "npm run cal-lib-all && ng build --prod"
   },
   "private": true,
   "dependencies": {
