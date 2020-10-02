@@ -6,10 +6,10 @@
 <span>Enter integer one - </span>
 <input type="number" [(ngModel)]="secondNumber">
 
-<br />
+<br/>
 <my-calculator-lib [integerOne]="firstNumber" [integerTwo]="secondNumber" 
             (additionEvent)="additionFuncalled($event)" (substractionEvent)="subsFuncalled($event)">  
 </my-calculator-lib>
-<br />
+<br/>
 
 <span>Result - {{result}}</span>

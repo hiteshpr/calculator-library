@@ -1,5 +1,26 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output } from '@angular/core';
 
+  /**
+   * CalculatorLibComponent - does simple mathematical calculations
+   *
+   * This component takes input numbers from user, performs addition and substraction on it
+   * and return result.
+   *
+   * How to use :-
+   *
+   * 1. Import the library into project.
+   * 2. integrate the compoennt as shown -
+   *
+   * <my-calculator-lib [integerOne]="firstNumber" [integerTwo]="secondNumber"
+   *        (additionEvent)="additionFuncalled($event)"
+   *        (substractionEvent)="subsFuncalled($event)">
+   * </my-calculator-lib>
+   *
+   */
 @Component({
   selector: 'my-calculator-lib',
   templateUrl: './calculator-lib.component.html',
@@ -7,31 +28,43 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class CalculatorLibComponent {
 
+  // take first number input as 'integerOne'
   @Input()
   public integerOne: number;
 
+  // take second number input as 'integerTwo'
   @Input()
   public integerTwo: number;
 
+  // when addition button is clicked this event is triggered
   @Output()
   public additionEvent: EventEmitter<number> = new EventEmitter<number>();
 
+  // when substraction button is clicked this event is triggered
   @Output()
   public substractionEvent: EventEmitter<number> = new EventEmitter<number>();
 
+  // store result
   public result: number;
 
+  /**
+   * emits result after performing
+   * addition between the numbers provided
+   *
+   */
   public additionFun(): void {
 
     this.result =  Number(this.integerOne) + Number(this.integerTwo);
-    console.log('result', this.result, typeof(this.result));
     this.additionEvent.emit(this.result);
   }
 
+  /**
+   * emits result after performing
+   * sunstraion between the numbers
+   */
   public substractFun(): void {
     this.result = Number(this.integerOne) - Number(this.integerTwo);
-    console.log('subresult', this.result);
     this.substractionEvent.emit(this.result);
-  } 
+  }
 
 }
