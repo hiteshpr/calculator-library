@@ -8,8 +8,11 @@
 
 <br/>
 <my-calculator-lib [integerOne]="firstNumber" [integerTwo]="secondNumber" 
-            (additionEvent)="additionFuncalled($event)" (substractionEvent)="subsFuncalled($event)">  
+            (additionEvent)="additionFuncalled($event)" 
+            (substractionEvent)="subsFuncalled($event)"
+            (multiplicationEvent)="multiplicationFuncalled($event)">  
 </my-calculator-lib>
 <br/>
-
-<span>Result - {{result}}</span>
+<div>
+    <h3>Result - {{result}}</h3>
+</div>

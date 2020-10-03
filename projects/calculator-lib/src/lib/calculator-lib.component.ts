@@ -44,6 +44,10 @@ export class CalculatorLibComponent {
   @Output()
   public substractionEvent: EventEmitter<number> = new EventEmitter<number>();
 
+  // when multiplication button is clicked this event is triggered
+  @Output()
+  public multiplicationEvent: EventEmitter<number> = new EventEmitter<number>();
+
   // store result
   public result: number;
 
@@ -60,11 +64,20 @@ export class CalculatorLibComponent {
 
   /**
    * emits result after performing
-   * sunstraion between the numbers
+   * substraion between the numbers
    */
   public substractFun(): void {
     this.result = Number(this.integerOne) - Number(this.integerTwo);
     this.substractionEvent.emit(this.result);
+  }
+
+  /**
+   * emits result after performing
+   * multiplication between the numbers
+   */
+  public multiplicationFun(): void {
+    this.result = Number(this.integerOne) * Number(this.integerTwo);
+    this.multiplicationEvent.emit(this.result);
   }
 
 }

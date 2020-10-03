@@ -23,11 +23,20 @@ export class AppComponent {
   }
 
   /**
-   * After substraction is performed, the result is emiteed and the
-   * fucntion assigns it to result variable which then displays it.
+   * After substraction is performed, the result is emitted and the
+   * function assigns it to result variable which then displays it.
    * @param {any} event
    */
   public subsFuncalled(event): void{
+    this.result = event;
+  }
+
+  /**
+   * After multiplication is performed, the result is emitted and the
+   * function assigns it to result variable which then displays it.
+   * @param {any} event
+   */
+  multiplicationFuncalled(event): void{
     this.result = event;
   }
 }
