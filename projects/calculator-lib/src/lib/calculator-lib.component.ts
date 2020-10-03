@@ -48,6 +48,10 @@ export class CalculatorLibComponent {
   @Output()
   public multiplicationEvent: EventEmitter<number> = new EventEmitter<number>();
 
+  // when division button is clicked this event is triggered
+  @Output()
+  public divisionEvent: EventEmitter<number> = new EventEmitter<number>();
+
   // store result
   public result: number;
 
@@ -78,6 +82,15 @@ export class CalculatorLibComponent {
   public multiplicationFun(): void {
     this.result = Number(this.integerOne) * Number(this.integerTwo);
     this.multiplicationEvent.emit(this.result);
+  }
+
+  /**
+   * emits result after performing
+   * division between the numbers
+   */
+  public divisionFun(): void {
+    this.result = (Number(this.integerOne)) / (Number(this.integerTwo));
+    this.divisionEvent.emit(this.result);
   }
 
 }
