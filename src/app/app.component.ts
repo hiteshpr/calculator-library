@@ -18,7 +18,7 @@ export class AppComponent {
    * @param {any} event
    *
    */
-  public additionFuncalled(event): void{
+  public additionFuncalled(event: number): void{
    this.result = event;
   }
 
@@ -27,7 +27,7 @@ export class AppComponent {
    * function assigns it to result variable which then displays it.
    * @param {any} event
    */
-  public subsFuncalled(event): void{
+  public subsFuncalled(event: number): void{
     this.result = event;
   }
 
@@ -36,7 +36,17 @@ export class AppComponent {
    * function assigns it to result variable which then displays it.
    * @param {any} event
    */
-  multiplicationFuncalled(event): void{
+  multiplicationFuncalled(event: number): void{
     this.result = event;
   }
+
+  /**
+   * After division is performed, the result is emitted and the
+   * function assigns it to result variable which then displays it.
+   * @param {any} event
+   */
+  divisionFuncalled(event: number): void{
+    this.result = event;
+  }
+
 }
