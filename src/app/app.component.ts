@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  public title = 'Calculator Library';
   public firstNumber: number;
   public secondNumber: number;
   public result: number;
